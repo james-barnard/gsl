@@ -1,0 +1,21 @@
+/Users/barnard/.rvm/rubies/ree-1.8.7-2012.02/bin/ruby extconf.rb
+extconf.rb:65: command not found: gsl-config --version
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/barnard/.rvm/rubies/ree-1.8.7-2012.02/bin/ruby
+extconf.rb:242: Check GSL>=0.9.4 is installed, and the command "gsl-config" is in search path. (RuntimeError)
+checking gsl version... 
