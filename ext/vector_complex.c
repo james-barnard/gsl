@@ -12,6 +12,12 @@
 #include "rb_gsl_array.h"
 #include "rb_gsl_complex.h"
 
+struct RBasicRaw {
+    VALUE flags;
+    VALUE klass;
+};
+#define RBASIC_SET_CLASS(obj, cls)     do {((struct RBasicRaw *)(obj))->klass = cls; } while (0)
+
 EXTERN VALUE cgsl_complex;
 static VALUE rb_gsl_vector_complex_inner_product(int argc, VALUE *argv, VALUE obj);
 static VALUE rb_gsl_vector_complex_product_to_m(int argc, VALUE *argv, VALUE obj);
@@ -939,9 +945,9 @@ static VALUE rb_gsl_vector_complex_trans(VALUE obj)
 static VALUE rb_gsl_vector_complex_trans2(VALUE obj)
 {
   if (CLASS_OF(obj) == cgsl_vector_complex) 
-    RBASIC(obj)->klass = cgsl_vector_complex_col;
+    RBASIC_SET_CLASS(obj, cgsl_vector_complex_col);
   else if (CLASS_OF(obj) == cgsl_vector_complex_col) 
-    RBASIC(obj)->klass = cgsl_vector_complex;
+    RBASIC_SET_CLASS(obj, cgsl_vector_complex);
   else {
     rb_raise(rb_eRuntimeError, "method trans! for %s is forbidden",
 	     rb_class2name(CLASS_OF(obj)));
