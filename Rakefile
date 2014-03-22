@@ -90,10 +90,11 @@ task :default => [:package, :gem]
 #  rdoc.options << '--exclude' << 'lib/'
 #  rdoc.rdoc_files.include('rdoc/*.rdoc')
 #}
-
-desc "Publish the RDoc files on RubyForge"
-task :pub_rdoc => ["html/index.html"] do
-  mkdir_p "emptydir"
-  sh "scp -rq html/* www.rubyforge.org:/var/www/gforge-projects/rb-gsl/."
-  rm_r "emptydir"
-end
+#
+#desc "Publish the RDoc files on RubyForge"
+#task :pub_rdoc => ["html/index.html"] do
+#  mkdir_p "emptydir"
+#  sh "scp -rq html/* www.rubyforge.org:/var/www/gforge-projects/rb-gsl/."
+#  rm_r "emptydir"
+#end
+>>>>>>> b8d76958f25c105a77dcfff853071a8869cfb4ed
